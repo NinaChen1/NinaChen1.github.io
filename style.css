@@ -1,26 +1,36 @@
+/* 整个页面基础设置 */
 body {
   margin: 0;
   padding: 0;
-  background-color: pink;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
-.container {
-  max-width: 600px;
-  margin: 100px auto;
-  background: white;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  text-align: center;
+/* 底层：固定黑色背景 */
+.background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: -1;
 }
 
+/* 上层：半透明、可滚动 */
+.content-layer {
+  min-height: 200vh; /* 故意做得很高，方便你看到滚动效果 */
+  background-color: rgba(255, 255, 255, 0.85); /* 高透明白色 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 标题样式 */
 h1 {
-  font-size: 36px;
-  margin-bottom: 20px;
+  color: black;
+  font-size: 32px; /* 接近 Word 的三号字 */
+  font-weight: 500;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
-p {
-  font-size: 18px;
-  color: #555;
-}
