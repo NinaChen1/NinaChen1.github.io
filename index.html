@@ -1,150 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Hi Welcome to My Personal Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>Hi, welcome to my personal website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- 黑色底层 -->
-  <div class="background-layer"></div>
+  <!-- 顶部 Hero 区 -->
+  <section class="hero">
+    <h1 class="hero-title">Welcome to my website</h1>
+    <p class="hero-subtitle">
+      A personal portfolio inspired by Apple-style design
+    </p>
+  </section>
 
-  <!-- 浮动内容 -->
-  <div class="content-layer">
+  <!-- About Me -->
+  <section class="about">
+    <h2 class="section-title">About Me</h2>
+    <p class="about-text">
+      I am exploring the intersection of technology, design, and human experience.
+      This website documents my projects, thoughts, and growth.
+    </p>
+  </section>
 
-    <!-- 自我介绍区 -->
-    <section id="about" class="fade-in">
-      <h1>About Me</h1>
-      <p>你好，我是 Nina，一名热爱设计与开发的学习者。</p>
-      <p>你可以下载我的 CV：
-        <a href="files/CV.pdf" download>点击下载</a></p>
-    </section>
+  <!-- Projects -->
+  <section class="projects">
+    <h2 class="section-title">Selected Projects</h2>
 
-    <!-- 项目展示 -->
-    <section id="projects" class="fade-in">
-      <h1>Projects</h1>
-      <div class="projects-grid">
+    <div class="projects-scroll">
 
-        <!-- 项目 1 -->
-        <div class="project-card" style="background-image: url('images/smart_trash_bin.jpg');">
-          <div class="project-overlay">
-            <h2>智能垃圾桶</h2>
-            <p>智能垃圾桶项目简介</p>
-            <div class="file-icons">
-              <a href="files/smart_trash_bin.pdf" target="_blank">PDF</a>
-              <a href="videos/smart_trash_bin.mp4" target="_blank">Video</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 项目 2 -->
-        <div class="project-card" style="background-image: url('images/watering_robot.jpg');">
-          <div class="project-overlay">
-            <h2>自动浇花机器人</h2>
-            <p>自动浇花机器人项目简介</p>
-            <div class="file-icons">
-              <a href="files/watering_robot.pdf" target="_blank">PDF</a>
-              <a href="videos/watering_robot.mp4" target="_blank">Video</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 项目 3 -->
-        <div class="project-card" style="background-image: url('images/face_recognition_door.jpg');">
-          <div class="project-overlay">
-            <h2>人脸识别门禁系统</h2>
-            <p>人脸识别门禁系统项目简介</p>
-            <div class="file-icons">
-              <a href="files/face_recognition_door.pdf" target="_blank">PDF</a>
-              <a href="videos/face_recognition_door.mp4" target="_blank">Video</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 项目 4 -->
-        <div class="project-card" style="background-image: url('images/smart_wardrobe.jpg');">
-          <div class="project-overlay">
-            <h2>智能衣柜</h2>
-            <p>智能衣柜项目简介</p>
-            <div class="file-icons">
-              <a href="files/smart_wardrobe.pdf" target="_blank">PDF</a>
-              <a href="videos/smart_wardrobe.mp4" target="_blank">Video</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 项目 5 -->
-        <div class="project-card" style="background-image: url('images/food_delivery_robot.jpg');">
-          <div class="project-overlay">
-            <h2>无人送餐车</h2>
-            <p>无人送餐车项目简介</p>
-            <div class="file-icons">
-              <a href="files/food_delivery_robot.pdf" target="_blank">PDF</a>
-              <a href="videos/food_delivery_robot.mp4" target="_blank">Video</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 项目 6 -->
-        <div class="project-card" style="background-image: url('images/smart_bookshelf.jpg');">
-          <div class="project-overlay">
-            <h2>智能书架</h2>
-            <p>智能书架项目简介</p>
-            <div class="file-icons">
-              <a href="files/smart_bookshelf.pdf" target="_blank">PDF</a>
-              <a href="videos/smart_bookshelf.mp4" target="_blank">Video</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 项目 7 -->
-        <div class="project-card" style="background-image: url('images/air_monitor.jpg');">
-          <div class="project-overlay">
-            <h2>空气监测器</h2>
-            <p>空气监测器项目简介</p>
-            <div class="file-icons">
-              <a href="files/air_monitor.pdf" target="_blank">PDF</a>
-              <a href="videos/air_monitor.mp4" target="_blank">Video</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 项目 8 -->
-        <div class="project-card" style="background-image: url('images/smart_parking.jpg');">
-          <div class="project-overlay">
-            <h2>智能停车系统</h2>
-            <p>智能停车系统项目简介</p>
-            <div class="file-icons">
-              <a href="files/smart_parking.pdf" target="_blank">PDF</a>
-              <a href="videos/smart_parking.mp4" target="_blank">Video</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 项目 9 -->
-        <div class="project-card" style="background-image: url('images/voice_assistant.jpg');">
-          <div class="project-overlay">
-            <h2>语音助手</h2>
-            <p>语音助手项目简介</p>
-            <div class="file-icons">
-              <a href="files/voice_assistant.pdf" target="_blank">PDF</a>
-              <a href="videos/voice_assistant.mp4" target="_blank">Video</a>
-            </div>
-          </div>
-        </div>
-
+      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1581578017426-1c6c6c8f6b8b');">
+        <span>Smart Trash Can</span>
       </div>
-    </section>
 
-  </div>
+      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e37b190418e');">
+        <span>Health Monitoring System</span>
+      </div>
 
-  <!-- 鼠标轨迹 -->
-  <canvas id="cursor-canvas"></canvas>
-  <!-- 点击爱心容器 -->
-  <div id="heart-container"></div>
+      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1559028012-dbe48c39d9c9');">
+        <span>Mobile App Design</span>
+      </div>
 
-  <script src="script.js"></script>
+      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475');">
+        <span>Embedded Device Project</span>
+      </div>
+
+      <!-- 你以后可以继续加到 9 个 -->
+    </div>
+  </section>
+
+  <footer class="footer">
+    © 2025 NinaChen
+  </footer>
+
 </body>
 </html>
