@@ -3,29 +3,44 @@ const canvas = document.getElementById('cursor-canvas');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-const circles = [];
+
+const particles = [];
 
 document.addEventListener('mousemove', e => {
-  for (let i=0; i<5; i++) {
-    circles.push({ x: e.clientX + (Math.random()*10-5), y: e.clientY + (Math.random()*10-5), alpha: 1, radius: 4 });
+  // 多生成几个点，使轨迹密集
+  for (let i = 0; i < 5; i++) {
+    particles.push({
+      x: e.clientX + (Math.random() * 10 - 5),
+      y: e.clientY + (Math.random() * 10 - 5),
+      alpha: 1,
+      radius: 4
+    });
   }
 });
 
-function animate() {
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  for (let i = 0; i < circles.length; i++) {
-    const c = circles[i];
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < particles.length; i++) {
+    const p = particles[i];
     ctx.beginPath();
-    ctx.arc(c.x, c.y, c.radius, 0, Math.PI*2);
-    ctx.fillStyle = `rgba(255,75,92,${c.alpha})`;
+    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255,75,92,${p.alpha})`;
     ctx.fill();
-    c.alpha -= 0.008;
-    if (c.alpha <= 0) { circles.splice(i,1); i--; }
+    p.alpha -= 0.008; // 持续约2秒
+    if (p.alpha <= 0) {
+      particles.splice(i, 1);
+      i--;
+    }
   }
-  requestAnimationFrame(animate);
+  requestAnimationFrame(draw);
 }
-animate();
-window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+draw();
+
+// 调整窗口大小
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
 
 // 点击爱心
 document.addEventListener('click', e => {
@@ -36,3 +51,4 @@ document.addEventListener('click', e => {
   document.body.appendChild(heart);
   setTimeout(() => heart.remove(), 1000);
 });
+
