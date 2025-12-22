@@ -3,78 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Hi Welcome to My Personal Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- 底层黑色背景 -->
+  <!-- 背景层 -->
   <div class="background-layer"></div>
 
-  <!-- 浮动内容层 -->
+  <!-- 内容层 -->
   <div class="content-layer">
 
     <!-- 自我介绍 -->
-    <section id="about">
+    <section id="about" class="fade-in">
       <h1>About Me</h1>
       <p>你好，我是 NinaChen1，一名热爱设计与开发的学习者。</p>
       <p>你可以下载我的 CV： <a href="files/CV.pdf" download>点击下载</a></p>
     </section>
 
     <!-- 项目展示 -->
-    <section id="projects">
-      <h1>Projects</h1>
+    <section id="projects" class="fade-in">
 
-      <div class="projects-grid">
-
-        <!-- 预留九个项目卡片 -->
-        <div class="project-card">
-          <h2>Project 1</h2>
-          <p>项目简介</p>
-        </div>
-        <div class="project-card">
-          <h2>Project 2</h2>
-          <p>项目简介</p>
-        </div>
-        <div class="project-card">
-          <h2>Project 3</h2>
-          <p>项目简介</p>
-        </div>
-        <div class="project-card">
-          <h2>Project 4</h2>
-          <p>项目简介</p>
-        </div>
-        <div class="project-card">
-          <h2>Project 5</h2>
-          <p>项目简介</p>
-        </div>
-        <div class="project-card">
-          <h2>Project 6</h2>
-          <p>项目简介</p>
-        </div>
-        <div class="project-card">
-          <h2>Project 7</h2>
-          <p>项目简介</p>
-        </div>
-        <div class="project-card">
-          <h2>Project 8</h2>
-          <p>项目简介</p>
-        </div>
-        <div class="project-card">
-          <h2>Project 9</h2>
-          <p>项目简介</p>
-        </div>
-
-      </div>
-    </section>
-
-  </div>
-
-  <!-- 鼠标轨迹 -->
-  <canvas id="cursor-canvas"></canvas>
-
-  <!-- 爱心容器 -->
-  <div id="heart-container"></div>
-
-  <script src="script.js"></script>
-</body>
-</html>
