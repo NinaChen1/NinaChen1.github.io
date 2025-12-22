@@ -1,41 +1,37 @@
-/* 全局样式 */
+/* 全局与字体 */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  background-color: #0d0d0d; /* 底层黑色背景 */
-  color: #222;
+  background-color: #0d0d0d;
   overflow-x: hidden;
 }
 
-/* 背景层 */
+/* 黑色底层 */
 .background-layer {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top:0; left:0;
+  width: 100%; height: 100%;
   background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
   z-index: 1;
 }
 
-/* 浮动内容层 */
+/* 浮动内容层（叠加图） */
 .content-layer {
   position: relative;
   z-index: 2;
   padding: 50px;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 50px auto;
   border-radius: 15px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 
-  /* 背景图片 + 半透明叠加 */
   background:
     linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
     url('images/background.jpg') center/cover no-repeat;
 }
 
-/* 渐入动画 */
+/* 淡入动画 */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -45,13 +41,12 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* section 标题 */
+/* 标题 */
 section h1 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 30px;
+  font-size: 2.6rem;
   color: #111;
-  letter-spacing: 1px;
+  margin-bottom: 30px;
 }
 
 /* 项目网格 */
@@ -61,75 +56,73 @@ section h1 {
   gap: 30px;
 }
 
-/* 项目卡片 */
+/* 项目卡片背景图 */
 .project-card {
-  background-color: rgba(255,255,255,0.95);
-  padding: 20px;
+  position: relative;
+  height: 220px;
   border-radius: 12px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
-  position: relative;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-}
-
-/* 项目图片容器 */
-.project-media {
-  position: relative;
-  height: 150px;
-  border-radius: 10px;
   overflow: hidden;
-  background-color: #eee;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.4s, filter 0.4s;
 }
 
-/* 项目图片悬停放大 */
-.project-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+/* 悬停放大 & 稍微亮度增强 */
+.project-card:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
-/* 文件/视频图标容器 */
-.file-icons {
+/* 叠加层：半透明黑 */
+.project-overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.6);
+  top:0; left:0; right:0; bottom:0;
+  background: rgba(0,0,0,0.45);
   color: #fff;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  padding: 5px 0;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: all 0.3s ease;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+/* 项目名称 */
+.project-overlay h2 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+/* 项目简介 */
+.project-overlay p {
+  font-size: 1rem;
+  margin: 5px 0 10px;
+}
+
+/* 文件/视频图标 */
+.file-icons {
+  display: flex;
+  gap: 12px;
   font-size: 0.9rem;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+}
+.file-icons a {
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 10px;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.file-icons a:hover {
+  background: rgba(255,255,255,0.3);
 }
 
-/* 鼠标悬停效果 */
-.project-card:hover .project-media img {
-  transform: scale(1.1);
-}
-
-.project-card:hover .file-icons {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* 鼠标轨迹 Canvas */
+/* 鼠标轨迹画布 */
 #cursor-canvas {
   position: fixed;
-  top:0;
-  left:0;
-  width: 100%;
-  height: 100%;
+  top:0; left:0;
+  width: 100%; height: 100%;
   pointer-events: none;
   z-index: 9999;
 }
@@ -139,24 +132,20 @@ section h1 {
   position: absolute;
   width: 20px;
   height: 20px;
-  background: url('data:image/svg+xml;utf8,<svg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M23.6 2.6c-2.1 0-4.1 1-5.6 2.6-1.5-1.6-3.5-2.6-5.6-2.6-4.3 0-7.8 3.5-7.8 7.8 0 9.7 13.4 16.5 13.4 16.5s13.4-6.8 13.4-16.5c0-4.3-3.5-7.8-7.8-7.8z"/></svg>') no-repeat center center;
+  background: url('data:image/svg+xml;utf8,<svg fill="red" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><path d=\"M23.6 2.6c-2.1 0-4.1 1-5.6 2.6-1.5-1.6-3.5-2.6-5.6-2.6-4.3 0-7.8 3.5-7.8 7.8 0 9.7 13.4 16.5 13.4 16.5s13.4-6.8 13.4-16.5c0-4.3-3.5-7.8-7.8-7.8z\"/></svg>') no-repeat center center;
   background-size: contain;
   pointer-events: none;
   animation: floatUp 1s ease-out forwards;
 }
-
 @keyframes floatUp {
   0% { transform: translateY(0) scale(1); opacity: 1; }
   100% { transform: translateY(-50px) scale(1.5); opacity: 0; }
 }
 
-/* 超小屏幕适配 */
-@media screen and (max-width: 900px) {
+/* 响应式 */
+@media (max-width: 1000px) {
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
-@media screen and (max-width: 600px) {
+@media (max-width: 700px) {
   .projects-grid { grid-template-columns: 1fr; }
-  section h1 { font-size: 2rem; }
 }
-
