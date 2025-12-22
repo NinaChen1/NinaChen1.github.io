@@ -1,31 +1,41 @@
+/* 全局样式 */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
-  background-color: #0d0d0d;
+  background-color: #0d0d0d; /* 底层黑色背景 */
   color: #222;
   overflow-x: hidden;
 }
 
+/* 背景层 */
 .background-layer {
   position: fixed;
-  top:0; left:0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
   z-index: 1;
 }
 
+/* 浮动内容层 */
 .content-layer {
   position: relative;
   z-index: 2;
   padding: 50px;
   max-width: 1200px;
   margin: 50px auto;
-  background-color: rgba(255,255,255,0.45);
   border-radius: 15px;
   box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+
+  /* 背景图片 + 半透明叠加 */
+  background:
+    linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+    url('images/background.jpg') center/cover no-repeat;
 }
 
+/* 渐入动画 */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -35,6 +45,7 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* section 标题 */
 section h1 {
   text-align: center;
   font-size: 2.5rem;
@@ -43,12 +54,14 @@ section h1 {
   letter-spacing: 1px;
 }
 
+/* 项目网格 */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
+/* 项目卡片 */
 .project-card {
   background-color: rgba(255,255,255,0.95);
   padding: 20px;
@@ -63,6 +76,7 @@ section h1 {
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
+/* 项目图片容器 */
 .project-media {
   position: relative;
   height: 150px;
@@ -71,6 +85,78 @@ section h1 {
   background-color: #eee;
 }
 
+/* 项目图片悬停放大 */
 .project-media img {
   width: 100%;
-  height:
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* 文件/视频图标容器 */
+.file-icons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* 鼠标悬停效果 */
+.project-card:hover .project-media img {
+  transform: scale(1.1);
+}
+
+.project-card:hover .file-icons {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 鼠标轨迹 Canvas */
+#cursor-canvas {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* 点击爱心 */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('data:image/svg+xml;utf8,<svg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M23.6 2.6c-2.1 0-4.1 1-5.6 2.6-1.5-1.6-3.5-2.6-5.6-2.6-4.3 0-7.8 3.5-7.8 7.8 0 9.7 13.4 16.5 13.4 16.5s13.4-6.8 13.4-16.5c0-4.3-3.5-7.8-7.8-7.8z"/></svg>') no-repeat center center;
+  background-size: contain;
+  pointer-events: none;
+  animation: floatUp 1s ease-out forwards;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-50px) scale(1.5); opacity: 0; }
+}
+
+/* 超小屏幕适配 */
+@media screen and (max-width: 900px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media screen and (max-width: 600px) {
+  .projects-grid { grid-template-columns: 1fr; }
+  section h1 { font-size: 2rem; }
+}
+
