@@ -1,11 +1,11 @@
-/* 基础设置 */
+/* 基础样式 */
 body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Arial, sans-serif;
   background-color: black;
   min-height: 100vh;
-  overflow: auto; /* 页面可滚动 */
+  overflow-x: hidden;
 }
 
 /* 底层黑色背景 */
@@ -19,15 +19,16 @@ body {
   z-index: 1;
 }
 
-/* 浮动内容层 */
+/* 内容层 */
 .content-layer {
   position: relative;
   z-index: 2;
   padding: 50px;
   margin: 50px auto;
   max-width: 900px;
-  background-color: rgba(255,255,255,0.85); /* 半透明白色 */
+  background-color: rgba(255,255,255,0.85);
   border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 /* 分区标题 */
@@ -37,23 +38,50 @@ section h1 {
   margin-bottom: 20px;
 }
 
-/* 每个项目样式 */
+/* 项目样式 */
 .project {
   margin-bottom: 50px;
   padding: 20px;
-  background-color: rgba(0,0,0,0.05); /* 小灰底，更易区分 */
+  background-color: rgba(0,0,0,0.05);
   border-radius: 12px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.project h2 {
-  margin-top: 0;
-  color: #222;
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 
-/* 图片和视频 */
-.project img, .project video {
+.project img {
   display: block;
   margin: 10px auto;
   max-width: 100%;
+  border-radius: 10px;
 }
 
+/* 鼠标轨迹红点 */
+.cursor-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* 爱心动画 */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: url('data:image/svg+xml;utf8,<svg fill="red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M23.6 2.6c-2.1 0-4.1 1-5.6 2.6-1.5-1.6-3.5-2.6-5.6-2.6-4.3 0-7.8 3.5-7.8 7.8 0 9.7 13.4 16.5 13.4 16.5s13.4-6.8 13.4-16.5c0-4.3-3.5-7.8-7.8-7.8z"/></svg>') no-repeat center center;
+  background-size: contain;
+  pointer-events: none;
+  animation: floatUp 1s ease-out forwards;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-50px) scale(1.5); opacity: 0; }
+}
