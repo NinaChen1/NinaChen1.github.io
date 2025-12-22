@@ -1,151 +1,111 @@
-/* 全局与字体 */
-body {
+/* 全局基础设置（苹果风） */
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #0d0d0d;
-  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
-/* 黑色底层 */
-.background-layer {
-  position: fixed;
-  top:0; left:0;
-  width: 100%; height: 100%;
-  background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
-  z-index: 1;
-}
-
-/* 浮动内容层（叠加图） */
-.content-layer {
-  position: relative;
-  z-index: 2;
-  padding: 50px;
-  max-width: 1300px;
-  margin: 50px auto;
-  border-radius: 15px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-
-  background:
-    linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
-    url('images/background.jpg') center/cover no-repeat;
-}
-
-/* 淡入动画 */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s forwards;
-}
-@keyframes fadeInUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* 标题 */
-section h1 {
-  text-align: center;
-  font-size: 2.6rem;
-  color: #111;
-  margin-bottom: 30px;
-}
-
-/* 项目网格 */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-/* 项目卡片背景图 */
-.project-card {
-  position: relative;
-  height: 220px;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.4s, filter 0.4s;
-}
-
-/* 悬停放大 & 稍微亮度增强 */
-.project-card:hover {
-  transform: scale(1.05);
-  filter: brightness(1.1);
-}
-
-/* 叠加层：半透明黑 */
-.project-overlay {
-  position: absolute;
-  top:0; left:0; right:0; bottom:0;
-  background: rgba(0,0,0,0.45);
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  background: #000;
   color: #fff;
+  line-height: 1.6;
+}
+
+/* Hero 区 */
+.hero {
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 10px;
+  padding-left: 10vw;
 }
 
-/* 项目名称 */
-.project-overlay h2 {
-  margin: 0;
-  font-size: 1.4rem;
+.hero-title {
+  font-size: 64px;
+  font-weight: 600;
+  letter-spacing: -1px;
 }
 
-/* 项目简介 */
-.project-overlay p {
-  font-size: 1rem;
-  margin: 5px 0 10px;
+.hero-subtitle {
+  margin-top: 20px;
+  font-size: 20px;
+  color: rgba(255,255,255,0.7);
 }
 
-/* 文件/视频图标 */
-.file-icons {
+/* 通用标题 */
+.section-title {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+/* About */
+.about {
+  padding: 120px 10vw;
+  max-width: 900px;
+}
+
+.about-text {
+  font-size: 18px;
+  color: rgba(255,255,255,0.8);
+}
+
+/* Projects */
+.projects {
+  padding-left: 10vw;
+  padding-bottom: 120px;
+}
+
+.projects-scroll {
   display: flex;
-  gap: 12px;
-  font-size: 0.9rem;
+  gap: 40px;
+  overflow-x: auto;
+  padding-right: 10vw;
+  scroll-behavior: smooth;
 }
-.file-icons a {
-  color: #fff;
-  text-decoration: none;
-  padding: 6px 10px;
-  border: 1px solid #fff;
-  border-radius: 6px;
-  transition: background 0.3s;
+
+.projects-scroll::-webkit-scrollbar {
+  height: 6px;
 }
-.file-icons a:hover {
+
+.projects-scroll::-webkit-scrollbar-thumb {
   background: rgba(255,255,255,0.3);
+  border-radius: 3px;
 }
 
-/* 鼠标轨迹画布 */
-#cursor-canvas {
-  position: fixed;
-  top:0; left:0;
-  width: 100%; height: 100%;
-  pointer-events: none;
-  z-index: 9999;
+/* 项目卡片 */
+.project-card {
+  min-width: 360px;
+  height: 480px;
+  border-radius: 20px;
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: flex-end;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  transition: transform 0.4s ease;
 }
 
-/* 点击爱心 */
-.heart {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: url('data:image/svg+xml;utf8,<svg fill="red" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><path d=\"M23.6 2.6c-2.1 0-4.1 1-5.6 2.6-1.5-1.6-3.5-2.6-5.6-2.6-4.3 0-7.8 3.5-7.8 7.8 0 9.7 13.4 16.5 13.4 16.5s13.4-6.8 13.4-16.5c0-4.3-3.5-7.8-7.8-7.8z\"/></svg>') no-repeat center center;
-  background-size: contain;
-  pointer-events: none;
-  animation: floatUp 1s ease-out forwards;
-}
-@keyframes floatUp {
-  0% { transform: translateY(0) scale(1); opacity: 1; }
-  100% { transform: translateY(-50px) scale(1.5); opacity: 0; }
+.project-card:hover {
+  transform: translateY(-12px);
 }
 
-/* 响应式 */
-@media (max-width: 1000px) {
-  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+.project-card span {
+  margin: 24px;
+  font-size: 20px;
+  font-weight: 500;
+  background: rgba(0,0,0,0.5);
+  padding: 10px 16px;
+  border-radius: 12px;
 }
-@media (max-width: 700px) {
-  .projects-grid { grid-template-columns: 1fr; }
+
+/* Footer */
+.footer {
+  padding: 40px 10vw;
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
 }
