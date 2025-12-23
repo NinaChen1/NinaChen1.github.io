@@ -1,6 +1,4 @@
-/* ======================
-   全局基础设置（Apple 风）
-====================== */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -12,12 +10,9 @@ body {
   background: #000;
   color: #fff;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
-/* ======================
-   Hero
-====================== */
+/* Hero */
 .hero {
   height: 100vh;
   display: flex;
@@ -29,7 +24,6 @@ body {
 .hero-title {
   font-size: 64px;
   font-weight: 600;
-  letter-spacing: -1px;
 }
 
 .hero-subtitle {
@@ -38,101 +32,69 @@ body {
   color: rgba(255,255,255,0.7);
 }
 
-/* ======================
-   About Me 布局
-====================== */
+/* About Me */
 .about {
-  padding: 120px 10vw;
+  padding: 140px 10vw;
 }
 
-.about-content {
+.about-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 80px;
 }
 
-.section-title {
-  font-size: 36px;
-  font-weight: 500;
-  margin-bottom: 24px;
-}
-
-/* ======================
-   About 文本逐行动画
-====================== */
+/* 左侧文字 */
 .about-text {
-  font-size: 18px;
-  color: rgba(255,255,255,0.85);
+  max-width: 520px;
 }
 
-.line {
+.about-title {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.about-line {
   overflow: hidden;
+  margin-bottom: 18px;
 }
 
-.line span {
+.about-line span {
   display: inline-block;
-  transform: translateY(100%);
+  font-size: 20px;
+  color: rgba(255,255,255,0.9);
+  transform: translateY(120%);
   opacity: 0;
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  transition: transform 0.9s ease, opacity 0.9s ease;
 }
 
-.line.show span {
+.about-line span.show {
   transform: translateY(0);
   opacity: 1;
 }
 
-/* ======================
-   右侧照片
-====================== */
-.about-photo {
+/* 右侧图片 */
+.about-image-wrapper {
   width: 360px;
   height: 480px;
-  object-fit: cover;
-  border-radius: 20px;
-
-  opacity: 0;
-  transform: scale(0.9);
-  transition: all 1s ease;
 }
 
-.about-photo.show {
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.about-image.show {
   opacity: 1;
   transform: scale(1);
-  animation: flash 0.6s ease;
 }
 
-@keyframes flash {
-  0% { filter: brightness(0.7); }
-  50% { filter: brightness(1.3); }
-  100% { filter: brightness(1); }
-}
-
-.about-photo.float {
-  transform: translateY(-16px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
-}
-
-/* ======================
-   鼠标红点
-====================== */
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10px;
-  height: 10px;
-  background: red;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 2s ease;
-}
-
-/* ======================
-   Footer
-====================== */
+/* Footer */
 .footer {
   padding: 40px 10vw;
   font-size: 14px;
