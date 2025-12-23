@@ -18,25 +18,43 @@ const observer = new IntersectionObserver(entries => {
 observer.observe(aboutSection);
 
 // 鼠标轨迹效果
-const trailContainer = document.getElementById("cursor-trail-container");
-document.addEventListener("mousemove", e => {
-  const dot = document.createElement("div");
-  dot.className = "trail-dot";
-  dot.style.left = e.clientX + "px";
-  dot.style.top = e.clientY + "px";
+// 鼠标拖尾（应用于整个网页）
+const trailContainer = document.createElement('div');
+trailContainer.id = 'cursor-trail-container';
+document.body.appendChild(trailContainer);
+
+let lastMouse = { x: 0, y: 0 };
+let dots = [];
+
+// 鼠标移动记录位置
+document.addEventListener('mousemove', e => {
+  lastMouse.x = e.clientX;
+  lastMouse.y = e.clientY;
+});
+
+// 每帧生成拖尾点
+function animateTrail() {
+  const dot = document.createElement('div');
+  dot.className = 'trail-dot';
+  dot.style.left = lastMouse.x + 'px';
+  dot.style.top = lastMouse.y + 'px';
   trailContainer.appendChild(dot);
 
-  // 2秒后消失
-  setTimeout(() => dot.remove(), 2000);
-});
+  dots.push(dot);
 
-// 图片轻微 Parallax（鼠标移动）
-document.querySelector('.about-inner').addEventListener('mousemove', e => {
-  const rect = e.currentTarget.getBoundingClientRect();
-  const x = (e.clientX - rect.left) / rect.width;
-  const y = (e.clientY - rect.top) / rect.height;
-  image.style.transform = `translate(${x*10 -5}px, ${y*10 -5}px) scale(1.02)`;
-});
-document.querySelector('.about-inner').addEventListener('mouseleave', () => {
-  image.style.transform = 'translate(0,0) scale(1)';
-});
+  // 保持最多 100 个点，删除老点
+  if (dots.length > 100) {
+    const oldDot = dots.shift();
+    oldDot.remove();
+  }
+
+  // 逐渐缩小和淡出
+  setTimeout(() => {
+    dot.style.opacity = 0;
+    dot.style.transform = 'scale(0)';
+  }, 10);
+
+  requestAnimationFrame(animateTrail);
+}
+
+animateTrail();
