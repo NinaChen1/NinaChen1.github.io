@@ -14,7 +14,6 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.5 });
-
 observer.observe(aboutSection);
 
 // 鼠标拖尾
@@ -24,12 +23,10 @@ document.body.appendChild(trailContainer);
 
 let lastMouse = { x: 0, y: 0 };
 let dots = [];
-
 document.addEventListener('mousemove', e => {
   lastMouse.x = e.clientX;
   lastMouse.y = e.clientY;
 });
-
 function animateTrail() {
   const dot = document.createElement('div');
   dot.className = 'trail-dot';
@@ -78,7 +75,6 @@ function updateCenterCard() {
     }
   });
 }
-
 updateCenterCard();
 carousel.addEventListener('scroll', ()=>requestAnimationFrame(updateCenterCard));
 window.addEventListener('resize', updateCenterCard);
@@ -101,8 +97,5 @@ cards.forEach((card, index) => {
     `;
   });
 });
-
 closeBtn.addEventListener('click', () => modal.style.display = 'none');
-window.addEventListener('click', e => {
-  if(e.target === modal) modal.style.display = 'none';
-});
+window.addEventListener('click', e => { if(e.target === modal) modal.style.display = 'none'; });
