@@ -27,7 +27,16 @@ document.addEventListener("mousemove", e => {
   trailContainer.appendChild(dot);
 
   // 2秒后消失
-  setTimeout(() => {
-    dot.remove();
-  }, 2000);
+  setTimeout(() => dot.remove(), 2000);
+});
+
+// 图片轻微 Parallax（鼠标移动）
+document.querySelector('.about-inner').addEventListener('mousemove', e => {
+  const rect = e.currentTarget.getBoundingClientRect();
+  const x = (e.clientX - rect.left) / rect.width;
+  const y = (e.clientY - rect.top) / rect.height;
+  image.style.transform = `translate(${x*10 -5}px, ${y*10 -5}px) scale(1.02)`;
+});
+document.querySelector('.about-inner').addEventListener('mouseleave', () => {
+  image.style.transform = 'translate(0,0) scale(1)';
 });
