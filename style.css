@@ -15,7 +15,7 @@ body {
 /* About Me */
 .about { padding:140px 10vw; position:relative; }
 .about-main-title { font-size:48px; font-weight:600; margin-bottom:60px; color:#fff; }
-.about-inner { display:flex; gap:60px; align-items:center; } /* 文字与图片垂直居中对齐 */
+.about-inner { display:flex; gap:60px; align-items:center; } /* 垂直居中 */
 
 /* 左侧图片 */
 .about-image-wrapper { flex:1 1 50%; overflow:hidden; position:relative; }
@@ -77,4 +77,76 @@ body {
 }
 
 /* Projects */
-.projects { padding-left:10vw; padding-bottom:120px;
+.projects { padding-left:10vw; padding-bottom:120px; }
+.section-title { font-size:36px; font-weight:500; margin-bottom:24px; color:#fff; }
+
+/* 核心修正：横向排列 */
+.projects-carousel {
+  display:flex;
+  gap:40px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  padding-bottom:40px;
+  perspective:1000px;
+  -webkit-overflow-scrolling: touch;
+  flex-wrap:nowrap; /* 防止换行 */
+}
+.projects-carousel::-webkit-scrollbar { height:6px; }
+.projects-carousel::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.3); border-radius:3px; }
+
+.project-card {
+  flex:0 0 auto; /* 防止换行 */
+  width:360px;  
+  height:480px; 
+  border-radius:20px;
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  box-shadow:0 10px 20px rgba(0,0,0,0.3);
+  transition:transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card span {
+  font-size:18px;
+  font-weight:500;
+  background:rgba(0,0,0,0.5);
+  padding:8px 12px;
+  border-radius:12px;
+  color:#fff;
+  margin-bottom:16px;
+}
+.project-card.center {
+  transform:scale(1.25);
+  box-shadow:0 35px 60px rgba(0,0,0,0.6);
+  z-index:10;
+}
+
+/* Modal */
+.modal {
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.85);
+  z-index:2000;
+  overflow-y:auto;
+}
+.modal-content {
+  max-width:900px;
+  margin:80px auto;
+  background:#111;
+  padding:30px;
+  border-radius:16px;
+  position:relative;
+  color:#fff;
+}
+.modal-close {
+  position:absolute;
+  top:16px; right:24px;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* Footer */
+.footer { padding:40px 10vw; font-size:14px; color:rgba(255,255,255,0.4); }
