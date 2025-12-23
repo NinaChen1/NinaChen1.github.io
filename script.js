@@ -78,7 +78,7 @@ window.addEventListener('resize',()=>{canvas.width=window.innerWidth; canvas.hei
 window.addEventListener('mousemove',e=>{trail.push({x:e.clientX,y:e.clientY,life:200});});
 function animateTrail(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
-  trail.forEach(p=>{ctx.fillStyle=`rgba(255,0,0,${p.life/200})`; ctx.beginPath(); ctx.arc(p.x,p.y,10,0,Math.PI*2); ctx.fill(); p.life--;});
+  trail.forEach(p=>{ctx.fillStyle=`rgba(255,0,0,${p.life/200})`; ctx.beginPath(); ctx.arc(p.x,p.y,6,0,Math.PI*2); ctx.fill(); p.life--;});
   trail=trail.filter(p=>p.life>0);
   requestAnimationFrame(animateTrail);
 }
