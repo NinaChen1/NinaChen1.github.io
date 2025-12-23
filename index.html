@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Nina Chen </title>
+  <title>Nina Chen Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -19,13 +19,16 @@
     <h2 class="about-main-title">About Me</h2>
     <div class="about-inner">
       <div class="about-image-wrapper">
-        <img src="images/photo.jpg" alt="My Photo" class="about-image" id="aboutImage">
+        <img src="images/about.jpg" alt="My Photo" class="about-image" id="aboutImage">
       </div>
       <div class="about-text">
         <div class="about-line"><span>Design · Technology · Human Experience</span></div>
         <div class="about-line"><span>I explore how technology shapes everyday life.</span></div>
         <div class="about-line"><span>I focus on clarity, intention, and emotion.</span></div>
         <div class="about-line"><span>This space documents my long-term growth.</span></div>
+        <div class="cv-link">
+          <a href="documents/CV.pdf" target="_blank">View My CV</a>
+        </div>
       </div>
     </div>
   </section>
@@ -46,8 +49,17 @@
     </div>
   </section>
 
+  <!-- Project Modal -->
+  <div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
   <footer class="footer">© 2025 NinaChen</footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
