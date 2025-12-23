@@ -2,55 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Nina Chen</title>
+  <title>Nina Chen Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
   <!-- Hero -->
   <section class="hero">
     <h1 class="hero-title">Welcome to my website</h1>
-    <p class="hero-subtitle">
-      A personal portfolio inspired by Apple-style design
-    </p>
+    <p class="hero-subtitle">A personal portfolio inspired by Apple-style design</p>
   </section>
 
   <!-- About Me -->
   <section class="about" id="about">
-
     <div class="about-inner">
 
-      <!-- 左侧文字 -->
+      <!-- 左侧大照片 -->
+      <div class="about-image-wrapper">
+        <img src="images/about.jpg" alt="My Photo" class="about-image" id="aboutImage">
+      </div>
+
+      <!-- 右侧文字 -->
       <div class="about-text">
-
         <h2 class="about-title">About Me</h2>
-
         <div class="about-line"><span>Design · Technology · Human Experience</span></div>
         <div class="about-line"><span>I explore how technology shapes everyday life.</span></div>
         <div class="about-line"><span>I focus on clarity, intention, and emotion.</span></div>
         <div class="about-line"><span>This space documents my long-term growth.</span></div>
-
-      </div>
-
-      <!-- 右侧照片 -->
-      <div class="about-image-wrapper">
-        <img src="images/photo.jpg" alt="My Photo" class="about-image" id="aboutImage">
       </div>
 
     </div>
-
+    <!-- 鼠标轨迹容器 -->
+    <div id="cursor-trail-container"></div>
   </section>
 
-  <!-- Projects（保留你原来的） -->
+  <!-- Projects -->
   <section class="projects">
     <h2 class="section-title">Selected Projects</h2>
+    <div class="projects-scroll">
+      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1581578017426-1c6c6c8f6b8b');"><span>Smart Trash Can</span></div>
+      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e37b190418e');"><span>Health Monitoring System</span></div>
+      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1559028012-dbe48c39d9c9');"><span>Mobile App Design</span></div>
+      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475');"><span>Embedded Device Project</span></div>
+      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1581578017426-1c6c6c8f6b8b');"><span>Project 5</span></div>
+      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e37b190418e');"><span>Project 6</span></div>
+      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1559028012-dbe48c39d9c9');"><span>Project 7</span></div>
+      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475');"><span>Project 8</span></div>
+      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1581578017426-1c6c6c8f6b8b');"><span>Project 9</span></div>
+    </div>
   </section>
 
-  <footer class="footer">
-    © 2025 NinaChen
-  </footer>
+  <footer class="footer">© 2025 NinaChen</footer>
 
   <script src="script.js"></script>
 </body>
