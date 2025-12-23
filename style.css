@@ -28,7 +28,7 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, s
 .projects {padding-left:10vw;}
 .projects-carousel {display:flex; gap:40px; overflow-x:auto; scroll-behavior:smooth; padding-bottom:60px; perspective:1200px; flex-wrap:nowrap; cursor:grab;}
 .projects-carousel::-webkit-scrollbar {
-    height: 4px; /* 滚轮高度 */
+    height: 6px; /* 滚轮高度 */
     background: #000; /* 背景颜色改为黑色 */
 }
 
