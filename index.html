@@ -2,33 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Nina Chen Portfolio</title>
+  <title>Hi, welcome to my personal website</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Hero -->
+  <!-- Hero 区 -->
   <section class="hero">
     <h1 class="hero-title">Welcome to my website</h1>
-    <p class="hero-subtitle">A personal portfolio inspired by Apple-style design</p>
+    <p class="hero-subtitle">
+      A personal portfolio inspired by Apple-style design
+    </p>
   </section>
 
   <!-- About Me -->
-  <section class="about" id="about">
-    <h2 class="about-main-title">About Me</h2>
-    <div class="about-inner">
-      <div class="about-image-wrapper">
-        <img src="images/about.jpg" alt="My Photo" class="about-image" id="aboutImage">
-      </div>
+  <section class="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <img src="images/myphoto.jpg" alt="My Photo" class="about-photo">
       <div class="about-text">
-        <div class="about-line"><span>Design · Technology · Human Experience</span></div>
-        <div class="about-line"><span>I explore how technology shapes everyday life.</span></div>
-        <div class="about-line"><span>I focus on clarity, intention, and emotion.</span></div>
-        <div class="about-line"><span>This space documents my long-term growth.</span></div>
-        <div class="cv-link">
-          <a href="documents/CV.pdf" target="_blank">View My CV</a>
-        </div>
+        <p>I am exploring the intersection of technology, design, and human experience. This website documents my projects, thoughts, and growth.</p>
+        <a href="documents/CV.pdf" target="_blank" class="cv-link">View my CV</a>
       </div>
     </div>
   </section>
@@ -37,29 +32,10 @@
   <section class="projects">
     <h2 class="section-title">Selected Projects</h2>
     <div class="projects-carousel" id="projectsCarousel">
-      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1581578017426-1c6c6c8f6b8b');"><span>Smart Trash Can</span></div>
-      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e37b190418e');"><span>Health Monitoring System</span></div>
-      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1559028012-dbe48c39d9c9');"><span>Mobile App Design</span></div>
-      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475');"><span>Embedded Device Project</span></div>
-      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1581578017426-1c6c6c8f6b8b');"><span>Project 5</span></div>
-      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e37b190418e');"><span>Project 6</span></div>
-      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1559028012-dbe48c39d9c9');"><span>Project 7</span></div>
-      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475');"><span>Project 8</span></div>
-      <div class="project-card" style="background-image:url('https://images.unsplash.com/photo-1581578017426-1c6c6c8f6b8b');"><span>Project 9</span></div>
-    </div>
-  </section>
-
-  <!-- Project Modal -->
-  <div id="projectModal" class="modal">
-    <div class="modal-content">
-      <span class="modal-close">&times;</span>
-      <div class="modal-body" id="modalBody"></div>
-    </div>
-  </div>
-
-  <footer class="footer">© 2025 NinaChen</footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
+      <div class="project-card" data-index="0" style="background-image:url('https://images.unsplash.com/photo-1581578017426-1c6c6c8f6b8b');"><span>Smart Trash Can</span></div>
+      <div class="project-card" data-index="1" style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e37b190418e');"><span>Health Monitoring System</span></div>
+      <div class="project-card" data-index="2" style="background-image:url('https://images.unsplash.com/photo-1559028012-dbe48c39d9c9');"><span>Mobile App Design</span></div>
+      <div class="project-card" data-index="3" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475');"><span>Embedded Device Project</span></div>
+      <div class="project-card" data-index="4" style="background-image:url('https://images.unsplash.com/photo-1581578017426-1c6c6c8f6b8b');"><span>Project 5</span></div>
+      <div class="project-card" data-index="5" style="background-image:url('https://images.unsplash.com/photo-1581090700227-1e37b190418e');"><span>Project 6</span></div>
+      <div class="project-card" data-index="6" style="background-image:url('https://images.unsplash.com/photo-1559028012-dbe48c39d9c9');"><span>Project 7</span></div
