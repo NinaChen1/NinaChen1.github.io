@@ -1,16 +1,11 @@
-/* ------------------ About Me & Hero 等逻辑可自行添加 ------------------ */
-
-/* ------------------ Projects 数据 & 模态 ------------------ */
-const projectData = [
-  {
-    title: "Smart Trash Can",
-    desc: "An intelligent trash can that sorts waste automatically.",
-    images: ["https://images.unsplash.com/photo-1581578017426-1c6c6c8f6b8b","https://images.unsplash.com/photo-1581578017426-1c6c6c8f6b8b?crop=entropy&cs=tinysrgb"],
-    videos: ["videos/demo1.mp4"],
-    docs: [{name:"Specification PDF", link:"documents/spec1.pdf"}]
-  },
-  { title: "Health Monitoring System", desc: "Wearable sensors to monitor vital signs in real time.", images:["https://images.unsplash.com/photo-1581090700227-1e37b190418e"], videos:["videos/demo2.mp4"], docs:[{name:"User Manual", link:"documents/manual2.pdf"}] }
-];
+/* ------------------ About Me 淡入 ------------------ */
+const fadeElements=document.querySelectorAll('.fade-in');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('show');}
+  });
+},{threshold:0.3});
+fadeElements.forEach(el=>observer.observe(el));
 
 /* ------------------ 3D 滚盘效果 + 惯性回弹 ------------------ */
 const carousel = document.getElementById('projectsCarousel');
@@ -75,53 +70,6 @@ function smoothScroll(offset){
   requestAnimationFrame(animate);
 }
 
-/* ------------------ 项目卡片点击模态 ------------------ */
-const modal=document.getElementById('projectModal');
-const closeBtn=modal.querySelector('.modal-close');
-const modalTitle=document.getElementById('modalTitle');
-const modalDesc=document.getElementById('modalDesc');
-const modalImages=document.getElementById('modalImages');
-const imagesWrapper=modalImages.querySelector('.images-wrapper');
-const prevBtn=modalImages.querySelector('.prev-btn');
-const nextBtn=modalImages.querySelector('.next-btn');
-const modalVideos=document.getElementById('modalVideos');
-const modalDocs=document.getElementById('modalDocs');
-let currentImageIndex=0;
-
-cards.forEach(card=>{
-  card.addEventListener('click',()=>{
-    const index=card.dataset.index;
-    const data=projectData[index]; if(!data) return;
-    modal.style.display='flex';
-    modalTitle.textContent=data.title;
-    modalDesc.textContent=data.desc;
-
-    imagesWrapper.innerHTML='';
-    data.images.forEach(src=>{const img=document.createElement('img'); img.src=src; imagesWrapper.appendChild(img);});
-    currentImageIndex=0; updateModalImages();
-
-    modalVideos.innerHTML='';
-    if(data.videos) data.videos.forEach(src=>{const video=document.createElement('video'); video.controls=true; video.style.width='100%'; video.style.marginTop='20px'; video.src=src; modalVideos.appendChild(video);});
-
-    modalDocs.innerHTML='';
-    if(data.docs) data.docs.forEach(d=>{const a=document.createElement('a'); a.href=d.link; a.target='_blank'; a.textContent=d.name; modalDocs.appendChild(a);});
-  });
-});
-
-function updateModalImages(){
-  const imgs=imagesWrapper.querySelectorAll('img');
-  imgs.forEach((img,i)=>{img.classList.toggle('active',i===currentImageIndex);});
-  imagesWrapper.style.transform=`translateX(-${currentImageIndex*imagesWrapper.clientWidth}px)`;
-}
-
-prevBtn.addEventListener('click',()=>{if(currentImageIndex>0) currentImageIndex--; updateModalImages();});
-nextBtn.addEventListener('click',()=>{if(currentImageIndex<imagesWrapper.children.length-1) currentImageIndex++; updateModalImages();});
-imagesWrapper.addEventListener('mousedown',e=>{isDown=true; startX=e.pageX-imagesWrapper.offsetLeft; scrollLeft=currentImageIndex*imagesWrapper.clientWidth;});
-imagesWrapper.addEventListener('mouseup',e=>{isDown=false; const x=e.pageX-imagesWrapper.offsetLeft; const walk=startX-x; if(walk>50 && currentImageIndex<imagesWrapper.children.length-1) currentImageIndex++; if(walk<-50 && currentImageIndex>0) currentImageIndex--; updateModalImages();});
-
-closeBtn.addEventListener('click',()=>modal.style.display='none');
-window.addEventListener('click',e=>{if(e.target===modal) modal.style.display='none';});
-
 /* ------------------ 鼠标拖尾 ------------------ */
 const canvas=document.getElementById('cursorTrail');
 const ctx=canvas.getContext('2d');
@@ -135,3 +83,4 @@ function animateTrail(){
   requestAnimationFrame(animateTrail);
 }
 animateTrail();
+
