@@ -86,12 +86,12 @@ body {
   display: flex;
   align-items: flex-end;
 
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-  transition: transform 0.4s ease;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  transition: transform 0.6s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-12px);
+  transform: translateY(-16px);
 }
 
 .project-card span {
