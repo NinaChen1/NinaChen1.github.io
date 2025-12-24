@@ -61,7 +61,7 @@ body {
 }
 
 .about-photo {
-    width: 33%;
+    width: 45%;
     border-radius: 20px;
     object-fit: cover;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -73,10 +73,10 @@ body {
 }
 
 .about-text {
-    width: 66%;
-    font-size: 18px;
+    width: 50%;
+    font-size: 20px;
     color: rgba(255,255,255,0.9);
-    transform: translateX(20px);
+    transform: translateX(80px);
 }
 
 /* =========================
