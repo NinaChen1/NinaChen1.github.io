@@ -1,67 +1,30 @@
 /* 全局基础 */
-* {margin:0; padding:0; box-sizing:border-box;}
-body {font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; background:#000; color:#fff; line-height:1.6; overflow-x:hidden;}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; background:#000; color:#fff; line-height:1.6; }
 
 /* Hero */
-.hero {height:100vh; display:flex; flex-direction:column; justify-content:center; padding-left:10vw;}
-.hero-title {font-size:64px; font-weight:600; letter-spacing:-1px;}
-.hero-subtitle {margin-top:20px; font-size:20px; color:rgba(255,255,255,0.7);}
+.hero { height:100vh; display:flex; flex-direction:column; justify-content:center; padding-left:10vw; }
+.hero-title { font-size:64px; font-weight:600; letter-spacing:-1px; }
+.hero-subtitle { margin-top:20px; font-size:20px; color:rgba(255,255,255,0.7); }
 
-/* 通用标题 */
-.section-title {font-size:42px; font-weight:600; margin-bottom:24px;}
+/* Section 标题 */
+.section-title { font-size:42px; font-weight:500; margin-bottom:40px; }
 
-/* About */
-.about { padding:120px 10vw; background:radial-gradient(
-      circle at 70% 40%,
-      rgba(255,255,255,0.15),
-      transparent 60%
-    ), linear-gradient(
-    135deg,
-    #5b21b6 0%,
-    #7c3aed 50%,
-    #a78bfa 100%
-  );}
-.about-content {display:flex; align-items:center; gap:80px;}
-.about-photo {width:45%; border-radius:20px; object-fit:cover; transition: transform 0.3s ease, box-shadow 0.3s ease;}
-.about-photo:hover {transform: scale(1.05) rotate(-2deg); box-shadow: 0 20px 40px rgba(0,0,0,0.5);}
-.about-text {width:45%; font-size:20px; color:rgba(255,255,255,0.8); transform: translateX(150px);}
+/* About Me */
+.about { padding:120px 10vw; background:#a855f7; }
+.about-content { display:flex; align-items:center; gap:40px; }
+.about-photo { width:33%; border-radius:20px; object-fit:cover; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.about-photo:hover { transform: scale(1.05) rotate(-2deg); box-shadow:0 20px 40px rgba(0,0,0,0.5);}
+.about-text { width:66%; font-size:18px; color:rgba(255,255,255,0.9); transform: translateX(20px); }
 
-/* About Me 淡入动画 */
-.fade-in {opacity:0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease;}
-.fade-in.show {opacity:1; transform: translateY(0);}
-
-.cv-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 32px;
-  text-decoration: none ;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-  padding-bottom: 6px;
-}
-
-.cv-text {
-  font-size: 15px;
-  color: white;
-  letter-spacing: 0.5px;
-}
-
-.cv-triangle {
-  width: 0;
-  height: 0;
-  border-left: 14px solid #c084fc;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  transition: transform 0.3s ease;
-}
-
-.cv-button:hover .cv-triangle {
-  transform: translateX(6px);
-}
+/* CV 按钮 */
+.cv-button { display:inline-flex; align-items:center; gap:8px; text-decoration:none; color:#fff; font-size:18px; font-weight:500; cursor:pointer; }
+.cv-button .cv-triangle { width:0; height:0; border-left:14px solid #fff; border-top:10px solid transparent; border-bottom:10px solid transparent; transition: transform 0.3s ease; }
+.cv-button:hover .cv-triangle { transform: translateX(6px); }
 
 /* Projects */
 .projects { padding:80px 10vw; }
-.project-item { display:flex; align-items:center; gap:40px; margin-bottom:80px; }
+.project-item { display:flex; align-items:center; gap:40px; margin-bottom:80px; flex-wrap:wrap; }
 .project-item.reverse { flex-direction:row-reverse; }
 .project-photo { width:40%; border-radius:20px; object-fit:cover; transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .project-photo:hover { transform: scale(1.05) rotate(-2deg); box-shadow:0 20px 40px rgba(0,0,0,0.5);}
@@ -71,7 +34,7 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, s
 .project-text .cv-button { display:inline-flex; align-items:center; gap:8px; }
 
 /* Footer */
-.footer {padding:40px 10vw; font-size:14px; color:rgba(255,255,255,0.4);}
+.footer { padding:40px 10vw; font-size:14px; color:rgba(255,255,255,0.4); }
 
 /* 鼠标拖尾 */
-#cursorTrail {position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:9999;}
+#cursorTrail { position:fixed; top:0; left:0; pointer-events:none; width:100%; height:100%; }
