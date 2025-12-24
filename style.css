@@ -60,22 +60,15 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, s
 }
 
 /* Projects */
-.projects {
-  padding: 120px 10vw;}
-.projects-carousel {display:flex; gap:40px; overflow-x:auto; scroll-behavior:smooth; padding-bottom:60px; perspective:1200px; flex-wrap:nowrap; cursor:grab;}
-.projects-carousel::-webkit-scrollbar {
-    height: 6px; /* 滚轮高度 */
-    background: #000; /* 背景颜色改为黑色 */
-}
-
-.projects-carousel::-webkit-scrollbar-thumb {
-    background: rgba(255,255,255,0.3); /* 滑块颜色 */
-    border-radius: 3px; /* 圆角 */
-}
-
-.project-card {flex:0 0 auto; width:360px; height:480px; border-radius:20px; background-size:cover; background-position:center; display:flex; align-items:flex-end; justify-content:center; box-shadow:0 10px 20px rgba(0,0,0,0.3); transition: transform 0.4s ease, box-shadow 0.4s ease; transform-origin: center center;}
-.project-card span {font-size:18px; font-weight:500; background:rgba(0,0,0,0.5); padding:8px 12px; border-radius:12px; color:#fff; margin-bottom:16px;}
-.project-card.center {z-index:10;}
+.projects { padding:80px 10vw; }
+.project-item { display:flex; align-items:center; gap:40px; margin-bottom:80px; }
+.project-item.reverse { flex-direction:row-reverse; }
+.project-photo { width:40%; border-radius:20px; object-fit:cover; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.project-photo:hover { transform: scale(1.05) rotate(-2deg); box-shadow:0 20px 40px rgba(0,0,0,0.5);}
+.project-text { width:55%; font-size:18px; color:rgba(255,255,255,0.8);}
+.project-text h3 { font-size:28px; margin-bottom:16px;}
+.project-text p { margin-bottom:20px; line-height:1.6;}
+.project-text .cv-button { display:inline-flex; align-items:center; gap:8px; }
 
 /* Footer */
 .footer {padding:40px 10vw; font-size:14px; color:rgba(255,255,255,0.4);}
