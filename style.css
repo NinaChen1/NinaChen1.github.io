@@ -49,7 +49,7 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, s
 .cv-triangle {
   width: 0;
   height: 0;
-  border-left: 7px solid #c084fc;
+  border-left: 14px solid #c084fc;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   transition: transform 0.3s ease;
