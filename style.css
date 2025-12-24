@@ -30,8 +30,34 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, s
 .fade-in {opacity:0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease;}
 .fade-in.show {opacity:1; transform: translateY(0);}
 
-.cv-link {display:inline-block; margin-top:20px; padding:10px 20px; background:#1e90ff; color:#000; border-radius:999px; text-decoration:none;}
-.cv-link:hover {background:#fff; color:#1e90ff;}
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 6px;
+}
+
+.cv-text {
+  font-size: 20px;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.cv-triangle {
+  width: 0;
+  height: 0;
+  border-left: 14px solid #c084fc;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  transition: transform 0.3s ease;
+}
+
+.cv-button:hover .cv-triangle {
+  transform: translateX(6px);
+}
 
 /* Projects */
 .projects {
