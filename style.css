@@ -41,9 +41,10 @@ body {
    Section 标题
 ========================= */
 .section-title {
-    font-size: 42px;
-    font-weight: 500;
+    font-size: 48px;
+    font-weight: 700;
     margin-bottom: 40px;
+     color: #fff;  
 }
 
 /* =========================
