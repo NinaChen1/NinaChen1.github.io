@@ -8,7 +8,7 @@ body {font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, s
 .hero-subtitle {margin-top:20px; font-size:20px; color:rgba(255,255,255,0.7);}
 
 /* 通用标题 */
-.section-title {font-size:36px; font-weight:500; margin-bottom:24px;}
+.section-title {font-size:42px; font-weight:500; margin-bottom:24px;}
 
 /* About */
 .about {padding:120px 10vw; background:radial-gradient(
