@@ -169,10 +169,10 @@ body {
     transform: translateX(-50%);
     
     display: flex;
-    gap: 32px;
+    gap: 40px;
     align-items: center;
 
-    padding: 14px 44px;
+    padding: 14px 100px;
     border-radius: 999px;
 
     background: rgba(255, 255, 255, 0.04);
