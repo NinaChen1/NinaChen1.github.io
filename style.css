@@ -84,7 +84,7 @@ body {
     align-items: center;
     gap: 8px;
     margin-top: 20px;
-    margin-left: auto;      /* 关键：让按钮整体靠右移动 */
+    margin-right: auto;      /* 关键：让按钮整体靠右移动 */
 }
 
 /* =========================
