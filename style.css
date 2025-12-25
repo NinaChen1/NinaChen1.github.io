@@ -167,33 +167,37 @@ body {
     top: 24px;
     left: 50%;
     transform: translateX(-50%);
-   width: fit-content
-    
+
     display: flex;
-    gap: 250px;
+    flex-wrap: nowrap;       /* 禁止换行 */
+    gap: 36px;               /* 栏目间距，既松又协调 */
     align-items: center;
 
-    padding: 14px 300px;
+    padding: 14px 44px;      /* 左右 padding 适中 */
     border-radius: 999px;
 
     background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 
     z-index: 10000;
+    width: fit-content;      /* 分号加上 */
 }
 
 .nav a {
     text-decoration: none;
     color: rgba(255,255,255,0.7);
-    font-size: 20px;
+    font-size: 20px;          /* 字稍大，更醒目 */
     font-weight: 500;
     letter-spacing: 0.3px;
     transition: color 0.3s ease, opacity 0.3s ease;
-    white-space: nowrap;
+    white-space: nowrap;       /* 保证文字不换行 */
 }
+
 .nav a:hover {
     color: rgba(255,255,255,1);
+}
+
 }
 html {
     scroll-behavior: smooth;
