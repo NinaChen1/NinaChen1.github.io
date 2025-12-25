@@ -170,10 +170,10 @@ body {
 
     display: flex;
     flex-wrap: nowrap;       /* 禁止换行 */
-    gap: 150px;               /* 栏目间距，既松又协调 */
+    gap: 60px;               /* 栏目间距，既松又协调 */
     align-items: center;
 
-    padding: 14px 44px;      /* 左右 padding 适中 */
+    padding: 14px 120px;      /* 左右 padding 适中 */
     border-radius: 999px;
 
     background: rgba(255, 255, 255, 0.04);
