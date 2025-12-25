@@ -78,14 +78,7 @@ body {
     font-size: 35px;
     color: rgba(255,255,255,0.7);
     transform: translateX(80px);
-    display: flex;
-    flex-direction: column;   /* 保证段落在上，按钮在下 */
-    align-items: flex-start;  /* 段落左对齐 */
-    gap: 16px;                /* 段落和按钮间距 */
 }
-.about-text .cv-button {
-    align-self: flex-end;     /* 按钮整行右对齐 */
-    margin-top: 0;
 
 
 /* =========================
