@@ -163,10 +163,6 @@ body {
    Navigation
 ========================= */
 .nav {
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(-50%) translateY(-10px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
     position: fixed;
     top: 24px;
     left: 50%;
@@ -184,11 +180,6 @@ body {
     -webkit-backdrop-filter: blur(20px);
 
     z-index: 10000;
-}
-.nav.nav--visible {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
 }
 
 .nav a {
