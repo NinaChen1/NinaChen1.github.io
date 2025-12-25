@@ -160,6 +160,45 @@ body {
 }
 
 /* =========================
+   Navigation
+========================= */
+.nav {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    display: flex;
+    gap: 28px;
+    align-items: center;
+
+    padding: 14px 32px;
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    z-index: 10000;
+}
+.nav a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+.nav a:hover {
+    color: rgba(255,255,255,1);
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+/* =========================
    Footer
 ========================= */
 .footer {
