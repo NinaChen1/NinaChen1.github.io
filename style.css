@@ -1,235 +1,88 @@
-/* =========================
-   全局基础
-========================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nina Chen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    background: #000;
-    color: #fff;
-    line-height: 1.6;
-}
+  <!-- Hero 区 -->
+  <section class="hero" id="hero">
+    <h1 class="hero-title">Welcome to my website</h1>
+    <p class="hero-subtitle">
+      Some individual projects and ideas. I am truly honored to receive your guidance.
+    </p>
+  </section>
 
-/* =========================
-   Hero
-========================= */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 10vw;
-}
+  <!-- About Me -->
+  <section class="about" id="about">
+    <div class="about-content">
+      <img src="images/photo.jpg" alt="My Photo" class="about-photo">
+      <div class="about-text">
+        <h2 class="section-title">About Me</h2>
+        <p>I am exploring the intersection of technology, design, and human experience.</p>
+        <p>This website documents my projects, thoughts, and growth.</p>
+        <div class="cv-button-wrapper">
+          <a href="files/Nina CV.pdf" target="_blank" class="cv-button">
+            <span class="cv-text">View my CV</span>
+            <span class="cv-triangle"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-.hero-title {
-    font-size: 128px;
-    font-weight: 500;
-    letter-spacing: -1px;
-}
+  <!-- Projects -->
+  <section class="projects" id="projects">
+    <h2 class="section-title">Projects</h2>
 
-.hero-subtitle {
-    margin-top: 20px;
-    font-size: 35px;
-    color: rgba(255,255,255,0.7);
-}
+    <div class="project-list">
+      <div class="project-item">
+        <div class="project-text">
+          <h3>Smart Bin</h3>
+          <p>Concept for a smart trash bin that automates sorting.</p>
+          <a href="files/smartbin.pdf" target="_blank" class="cv-button">
+            <span class="cv-text">View Project</span>
+            <span class="cv-triangle"></span>
+          </a>
+        </div>
+        <img src="images/smartbin.jpg" alt="Smart Bin" class="project-photo">
+      </div>
 
-/* =========================
-   Section 标题
-========================= */
-.section-title {
-    font-size: 100px;
-    font-weight: 500;
-    margin-bottom: 40px;
-     color: #fff;  
-}
+      <div class="project-item">
+        <div class="project-text">
+          <h3>Measure System</h3>
+          <p>A system to monitor and measure real-time parameters efficiently.</p>
+          <a href="files/measure.pdf" target="_blank" class="cv-button">
+            <span class="cv-text">View Project</span>
+            <span class="cv-triangle"></span>
+          </a>
+        </div>
+        <img src="images/measure.jpg" alt="Measure System" class="project-photo">
+      </div>
 
-/* =========================
-   About Me
-========================= */
-.about {
-    padding: 120px 10vw;
-    background: #a855f7;
-}
+      <div class="project-item">
+        <div class="project-text">
+          <h3>Safeguard</h3>
+          <p>Protective solutions for smart home security systems.</p>
+          <a href="files/safeguard.pdf" target="_blank" class="cv-button">
+            <span class="cv-text">View Project</span>
+            <span class="cv-triangle"></span>
+          </a>
+        </div>
+        <img src="images/safeguard.jpg" alt="Safeguard" class="project-photo">
+      </div>
+    </div>
+  </section>
 
-.about-content {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 NinaChen
+  </footer>
 
-.about-photo {
-    width: 45%;
-    border-radius: 20px;
-    object-fit: cover;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.about-photo:hover {
-    transform: scale(1.05) rotate(-2deg);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-}
-
-.about-text {
-    width: 50%;
-    font-size: 35px;
-    color: rgba(255,255,255,0.7);
-    transform: translateX(80px);
-}
-.about-text .cv-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 20px;
-    margin-left: auto;      /* 关键：让按钮整体靠右移动 */
-}
-
-/* =========================
-   CV 按钮
-========================= */
-.cv-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: #fff;
-    font-size: 35px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.cv-button .cv-triangle {
-    width: 0;
-    height: 0;
-    border-left: 14px solid #fff;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    transition: transform 0.3s ease;
-}
-
-.cv-button:hover .cv-triangle {
-    transform: translateX(6px);
-}
-
-/* =========================
-   Projects
-========================= */
-.projects {
-    padding: 120px 10vw; /* 与 About Me 一致 */
-}
-
-.project-item {
-    display: flex;
-    align-items: center; /* 顶部对齐 */
-    gap: 40px; /* 图片和文字之间的间距 */
-    margin-bottom: 120px;
-}
-
-.project-photo {
-    width: 45%; /* 图片占一半左右 */
-    border-radius: 20px;
-    object-fit: cover;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-photo:hover {
-    transform: scale(1.05) rotate(-2deg);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-}
-
-.project-text {
-    width: 50%; /* 文字占另一半 */
-    font-size: 18px;
-    color: rgba(255,255,255,0.8);
-    text-align: left; /* 左对齐文字 */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.project-text h3 {
-    font-size: 28px;
-    margin-bottom: 16px;
-}
-
-.project-text p {
-    margin-bottom: 20px;
-    line-height: 1.6;
-}
-
-.project-text .cv-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-}
-
-/* =========================
-   Navigation
-========================= */
-.nav {
-    position: fixed;
-    top: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    display: flex;
-    flex-wrap: nowrap;       /* 禁止换行 */
-    gap: 100px;               /* 栏目间距，既松又协调 */
-    align-items: center;
-
-    padding: 14px 120px;      /* 左右 padding 适中 */
-    border-radius: 999px;
-
-    background: rgba(255, 255, 255, 0.04);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-
-    z-index: 10000;
-    width: fit-content;      /* 分号加上 */
-}
-
-.nav a {
-    text-decoration: none;
-    color: rgba(255,255,255,0.7);
-    font-size: 35px;          /* 字稍大，更醒目 */
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    transition: color 0.3s ease, opacity 0.3s ease;
-    white-space: nowrap;       /* 保证文字不换行 */
-}
-
-.nav a:hover {
-    color: rgba(255,255,255,1);
-}
-
-}
-html {
-    scroll-behavior: smooth;
-}
-
-
-
-/* =========================
-   Footer
-========================= */
-.footer {
-    padding: 40px 10vw;
-    font-size: 14px;
-    color: rgba(255,255,255,0.4);
-}
-
-/* =========================
-   鼠标拖尾
-========================= */
-#cursorTrail {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-}
+  <canvas id="cursorTrail"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
