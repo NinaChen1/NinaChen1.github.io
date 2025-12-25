@@ -27,13 +27,13 @@ body {
 
 .hero-title {
     font-size: 128px;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: -1px;
 }
 
 .hero-subtitle {
     margin-top: 20px;
-    font-size: 40px;
+    font-size: 35px;
     color: rgba(255,255,255,0.7);
 }
 
