@@ -78,6 +78,15 @@ body {
     font-size: 35px;
     color: rgba(255,255,255,0.7);
     transform: translateX(80px);
+     text-align: left;      /* 默认文本左对齐 */
+    position: relative;    /* 为按钮右对齐提供容器 */
+}
+.about-text .cv-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;       /* 与文本段落间距 */
+    float: right;           /* 右对齐按钮 */
 }
 
 /* =========================
