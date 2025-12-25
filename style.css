@@ -42,7 +42,7 @@ body {
 ========================= */
 .section-title {
     font-size: 100px;
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 40px;
      color: #fff;  
      text-align: left; 
@@ -58,12 +58,8 @@ body {
 
 .about-content {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 40px;
-}
-.about-right {
-    display: flex;
-    flex-direction: column;  /* 纵向排列：标题在上，文本在下 */
 }
 
 .about-photo {
