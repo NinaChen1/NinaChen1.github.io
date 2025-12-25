@@ -58,8 +58,12 @@ body {
 
 .about-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 40px;
+}
+.about-right {
+    display: flex;
+    flex-direction: column;  /* 纵向排列：标题在上，文本在下 */
 }
 
 .about-photo {
