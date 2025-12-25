@@ -75,7 +75,7 @@ body {
 
 .about-text {
     width: 50%;
-    font-size: 20px;
+    font-size: 35px;
     color: rgba(255,255,255,0.7);
     transform: translateX(80px);
 }
@@ -89,7 +89,7 @@ body {
     gap: 8px;
     text-decoration: none;
     color: #fff;
-    font-size: 18px;
+    font-size: 35px;
     font-weight: 500;
     cursor: pointer;
 }
