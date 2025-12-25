@@ -169,15 +169,15 @@ body {
     transform: translateX(-50%);
     
     display: flex;
-    gap: 28px;
+    gap: 32px;
     align-items: center;
 
-    padding: 14px 32px;
+    padding: 14px 44px;
     border-radius: 999px;
 
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(16px);
 
     z-index: 10000;
 }
