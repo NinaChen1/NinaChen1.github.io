@@ -187,7 +187,7 @@ body {
 .nav a {
     text-decoration: none;
     color: rgba(255,255,255,0.7);
-    font-size: 20px;          /* 字稍大，更醒目 */
+    font-size: 35px;          /* 字稍大，更醒目 */
     font-weight: 500;
     letter-spacing: 0.3px;
     transition: color 0.3s ease, opacity 0.3s ease;
