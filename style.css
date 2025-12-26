@@ -56,9 +56,10 @@ body {
 .about {
     padding: 120px 10vw;
     background: #a855f7;
-    opacity: 0; /* 初始时可见 */
-    transform: translateY(100px); /* 初始位移，确保它开始时在屏幕外 */
-    transition: opacity 1s ease, transform 1s ease; /* 动画过渡 */
+    opacity: 1; /* 初始时可见 */
+    transform: translateY(0); /* 初始位移，确保它开始时在屏幕外 */
+    position: relative;  /* 使用相对定位，确保正常显示 */
+     z-index: 10;
 }
 
 .about-content {
