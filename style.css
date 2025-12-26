@@ -24,7 +24,6 @@ body {
     flex-direction: column;
     justify-content: center;
     padding-left: 10vw;
-    opacity: 1;
     transition: opacity 0.8s ease; /* 控制淡出效果 */
     transform-origin: top; /* 设置动画的旋转原点为顶部 */
 }
@@ -59,8 +58,7 @@ body {
     background: #a855f7;
     opacity: 0; /* 初始时可见 */
     transform: translateY(100px); /* 初始位移，确保它开始时在屏幕外 */
-    transition: opacity 0.8s ease, transform 0.8s ease; /* 动画过渡 */
-   position: relative;  /* 确保它可以正确显示 */
+    transition: opacity 1s ease, transform 1s ease; /* 动画过渡 */
 }
 
 .about-content {
