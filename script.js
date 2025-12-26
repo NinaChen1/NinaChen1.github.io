@@ -19,8 +19,8 @@ gsap.to(".about", {
   ease: "power2.out",
   scrollTrigger: {
     trigger: ".about",
-    start: "top 80%",  // 当 .about 区域的顶部到达视口 80% 时开始
-    end: "top 20%",    // 当 .about 区域的顶部到达视口 20% 时结束
+    start: "top center%",  // 当 .about 区域的顶部到达视口 80% 时开始
+    end: "top center%",    // 当 .about 区域的顶部到达视口 20% 时结束
     scrub: true,       // 滚动控制动画
     markers: true,          // 添加标记，帮助调试，查看动画开始和结束的具体位置
   }
