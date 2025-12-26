@@ -174,8 +174,8 @@ body {
     padding: 14px 100px;
     border-radius: 999px;
 
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(20px);
 
     z-index: 10000;
