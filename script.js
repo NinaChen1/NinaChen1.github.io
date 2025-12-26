@@ -1,32 +1,3 @@
-gsap.registerPlugin(ScrollTrigger);
-
-// Hero 区域动画：滚动时淡出
-gsap.to(".hero", {
-  opacity: 0,
-  scrollTrigger: {
-    trigger: ".hero",
-    start: "top top",  // 当 .hero 区域的顶部到达视口顶部时开始
-    end: "bottom top", // 当 .hero 区域的底部到达视口顶部时结束
-    scrub: true,       // 让动画随着滚动进度平滑过渡
-  }
-});
-gsap.registerPlugin(ScrollTrigger);
-// About Me 区域动画：滚动时滑入并淡入
-gsap.to(".about", {
-  opacity: 1,
-  transform: "translateY(0)",
-  duration: 1.2,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".about",
-    start: "top center",  // 当 .about 区域的顶部到达视口 80% 时开始
-    end: "top 20%",    // 当 .about 区域的顶部到达视口 20% 时结束
-    scrub: true,       // 滚动控制动画
-    markers: true,          // 添加标记，帮助调试，查看动画开始和结束的具体位置
-  }
-});
-
-
 // 鼠标拖尾
 const canvas = document.getElementById('cursorTrail');
 const ctx = canvas.getContext('2d');
