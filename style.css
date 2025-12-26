@@ -35,8 +35,9 @@ body {
 }
 .down-arrow {
     margin-left: 20px;  /* 给箭头留点间距 */
-    font-size: 40px;    /* 调整箭头的大小 */
+    font-size: 100px;    /* 调整箭头的大小 */
     color: rgba(255,255,255,0.7);  /* 设置箭头的颜色 */
+   font-weight: bold;  /* 增加箭头的粗细，取决于字体的支持 */
     animation: bounce 1s infinite;  /* 为箭头添加一个简单的跳动动画 */
 }
 /* 动画效果：箭头上下跳动 */
