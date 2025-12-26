@@ -13,7 +13,6 @@ body {
     color: #fff;
     line-height: 1.6;
     scroll-behavior: smooth; /* 滚动时使用平滑过渡 */
-    overflow-x: hidden;
 }
 
 /* =========================
@@ -25,6 +24,9 @@ body {
     flex-direction: column;
     justify-content: center;
     padding-left: 10vw;
+    background: #000;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-title {
@@ -56,9 +58,7 @@ body {
     padding: 120px 10vw;
     background: #a855f7;
     position: relative;
-    z-index: 2;
-    margin-top: 100vh; /* 确保从 Hero 下方开始 */
-    min-height: 100vh;
+    z-index: 1;
 }
 
 .about-content {
@@ -118,8 +118,6 @@ body {
 ========================= */
 .projects {
     padding: 120px 10vw; /* 与 About Me 一致 */
-    position: relative;
-    z-index: 2;
 }
 
 .project-item {
@@ -209,8 +207,6 @@ html {
     padding: 40px 10vw;
     font-size: 14px;
     color: rgba(255,255,255,0.4);
-    position: relative;
-    z-index: 2;
 }
 
 /* =========================
@@ -227,49 +223,48 @@ html {
 }
 
 /* =========================
-   翻书效果 - Hero 和 About Me 切换
+   翻书效果过渡层
 ========================= */
-.page-transition {
+.page-turner {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
     background: #000;
-    z-index: 4;
+    z-index: 9998;
     transform-origin: bottom center;
-    transform-style: preserve-3d;
     pointer-events: none;
+    opacity: 0;
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
     display: none;
+}
+
+.page-turner.turning {
+    display: block;
     opacity: 1;
-    transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* 向前翻到 About */
-.page-transition.flip-forward {
     transform: rotateX(90deg);
-    opacity: 0.8;
 }
 
-/* 向后翻回 Hero */
-.page-transition.flip-back {
-    transform: rotateX(-90deg);
-    opacity: 0.8;
+/* 翻书效果动画 */
+@keyframes flipToAbout {
+    0% {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
 }
 
-/* Hero 包装容器 */
-.hero-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 3;
-    background: #000;
-}
-
-/* Projects 部分调整顶部间距 */
-.projects {
-    padding: 120px 10vw;
+@keyframes flipToHero {
+    0% {
+        transform: rotateX(90deg);
+        opacity: 1;
+    }
+    100% {
+        transform: rotateX(0deg);
+        opacity: 0;
+    }
 }
