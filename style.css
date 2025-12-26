@@ -56,7 +56,6 @@ body {
 .about {
     padding: 120px 10vw;
     background: #a855f7;
-
     opacity: 0; /* 初始时不可见 */
     transform: translateY(100px); /* 初始位移，确保它开始时在屏幕外 */
     transition: opacity 0.8s ease, transform 0.8s ease; /* 动画过渡 */
