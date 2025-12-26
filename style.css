@@ -30,6 +30,14 @@ body {
     font-size: 128px;
     font-weight: 600;
     letter-spacing: -1px;
+     display: inline-flex; /* 确保标题和箭头在同一行 */
+    align-items: center;  /* 垂直居中箭头 */
+}
+.down-arrow {
+    margin-left: 20px;  /* 给箭头留点间距 */
+    font-size: 40px;    /* 调整箭头的大小 */
+    color: rgba(255,255,255,0.7);  /* 设置箭头的颜色 */
+    animation: bounce 1s infinite;  /* 为箭头添加一个简单的跳动动画 */
 }
 
 .hero-subtitle {
