@@ -112,21 +112,15 @@ body {
 ========================= */
 .projects {
     padding: 120px 10vw; /* 与 About Me 一致 */
-    perspective: 1500px; /* 为项目容器添加透视效果 */
 }
 
 .project-item {
     display: flex;
     align-items: center; /* 顶部对齐 */
     gap: 40px; /* 图片和文字之间的间距 */
-    opacity: 0; /* 初始透明 */
-    transform: rotateY(15deg); /* 初始旋转效果 */
-    transition: transform 0.8s ease, opacity 0.8s ease; /* 动画过渡效果 */
-   /* margin-bottom: 120px;*/
+    margin-bottom: 120px;
 }
-.project-item.visible {
-    opacity: 1; /* 滚动进入视口时变为完全不透明 */
-    transform: rotateY(0deg); /* 恢复旋转 */
+
 }
 .project-photo {
     width: 45%; /* 图片占一半左右 */
