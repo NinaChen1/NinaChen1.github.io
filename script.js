@@ -1,3 +1,8 @@
+  function scrollToAbout() {
+  const aboutSection = document.getElementById('about');
+  aboutSection.scrollIntoView({ behavior: 'smooth' }); // 平滑滚动到 About Me 部分
+}
+
 // 鼠标拖尾
 const canvas = document.getElementById('cursorTrail');
 const ctx = canvas.getContext('2d');
