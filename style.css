@@ -12,6 +12,7 @@ body {
     background: #000;
     color: #fff;
     line-height: 1.6;
+   scroll-behavior: smooth; /* 滚动时使用平滑过渡 */
 }
 
 /* =========================
@@ -23,6 +24,8 @@ body {
     flex-direction: column;
     justify-content: center;
     padding-left: 10vw;
+    opacity: 1;
+    transition: opacity 0.8s ease; /* 控制淡出效果 */
 }
 
 .hero-title {
@@ -170,18 +173,14 @@ body {
     top: 24px;
     left: 50%;
     transform: translateX(-50%);
-    
     display: flex;
     gap: 50px;
     align-items: center;
-
     padding: 14px 100px;
     border-radius: 999px;
-
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(20px);
-
     z-index: 10000;
 }
 
