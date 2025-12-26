@@ -39,6 +39,18 @@ body {
     color: rgba(255,255,255,0.7);  /* 设置箭头的颜色 */
     animation: bounce 1s infinite;  /* 为箭头添加一个简单的跳动动画 */
 }
+/* 动画效果：箭头上下跳动 */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 
 .hero-subtitle {
     margin-top: 20px;
