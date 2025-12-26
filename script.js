@@ -10,7 +10,7 @@ gsap.to(".hero", {
     scrub: true,       // 让动画随着滚动进度平滑过渡
   }
 });
-
+gsap.registerPlugin(ScrollTrigger);
 // About Me 区域动画：滚动时滑入并淡入
 gsap.to(".about", {
   opacity: 1,
