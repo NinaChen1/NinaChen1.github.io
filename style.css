@@ -14,10 +14,6 @@ body {
     line-height: 1.6;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 /* =========================
    Hero
 ========================= */
@@ -30,14 +26,14 @@ html {
 }
 
 .hero-title {
-    font-size: 128px;
-    font-weight: 500;
+    font-size: 64px;
+    font-weight: 600;
     letter-spacing: -1px;
 }
 
 .hero-subtitle {
     margin-top: 20px;
-    font-size: 35px;
+    font-size: 20px;
     color: rgba(255,255,255,0.7);
 }
 
@@ -45,10 +41,10 @@ html {
    Section 标题
 ========================= */
 .section-title {
-    font-size: 100px;
-    font-weight: 500;
+    font-size: 48px;
+    font-weight: 700;
     margin-bottom: 40px;
-    color: #fff;  
+    color: #fff;
 }
 
 /* =========================
@@ -79,17 +75,9 @@ html {
 
 .about-text {
     width: 50%;
-    font-size: 35px;
+    font-size: 20px;
     color: rgba(255,255,255,0.7);
     transform: translateX(80px);
-}
-
-.about-text .cv-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 20px;
-    margin-left: auto; /* 关键：让按钮整体靠右移动 */
 }
 
 /* =========================
@@ -101,7 +89,7 @@ html {
     gap: 8px;
     text-decoration: none;
     color: #fff;
-    font-size: 35px;
+    font-size: 18px;
     font-weight: 500;
     cursor: pointer;
 }
@@ -157,3 +145,38 @@ html {
 
 .project-text h3 {
     font-size: 28px;
+    margin-bottom: 16px;
+}
+
+.project-text p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.project-text .cv-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* =========================
+   Footer
+========================= */
+.footer {
+    padding: 40px 10vw;
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+}
+
+/* =========================
+   鼠标拖尾
+========================= */
+#cursorTrail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
