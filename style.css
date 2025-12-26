@@ -23,9 +23,6 @@ body {
     flex-direction: column;
     justify-content: center;
     padding-left: 10vw;
-   
-    opacity: 1; /* 初始时可见 */
-    transition: opacity 0.8s ease; /* 动画过渡 */
 }
 
 .hero-title {
