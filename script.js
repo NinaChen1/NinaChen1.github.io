@@ -30,7 +30,7 @@ function animateTrail() {
 }
 animateTrail();
 
-// 简单的翻书效果 - 只在 Hero 和 About Me 之间
+// 简单的翻书效果 - 只在 Hero 和 About Me 之间（加快版）
 document.addEventListener('DOMContentLoaded', function() {
     const pageTurner = document.getElementById('pageTurner');
     const heroSection = document.getElementById('hero');
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // 翻到 About
+    // 翻到 About - 加快版
     function flipToAbout() {
         if (isTransitioning) return;
         
@@ -71,19 +71,19 @@ document.addEventListener('DOMContentLoaded', function() {
         // 强制重绘
         pageTurner.offsetHeight;
         
-        // 开始动画
+        // 立即开始动画，几乎没有延迟
         setTimeout(() => {
-            // 动画完成后
+            // 动画完成后 - 时间缩短为300ms
             setTimeout(() => {
                 pageTurner.style.display = 'none';
                 pageTurner.classList.remove('turning');
                 isAtHero = false;
                 isTransitioning = false;
-            }, 1000);
-        }, 10);
+            }, 300); // 从1000ms改为300ms
+        }, 0); // 从10ms改为0ms
     }
     
-    // 翻回 Hero
+    // 翻回 Hero - 加快版
     function flipToHero() {
         if (isTransitioning) return;
         
@@ -96,24 +96,24 @@ document.addEventListener('DOMContentLoaded', function() {
         // 强制重绘
         pageTurner.offsetHeight;
         
-        // 反向动画
+        // 立即开始反向动画
         setTimeout(() => {
             pageTurner.style.transform = 'rotateX(0deg)';
             
-            // 动画完成后
+            // 动画完成后 - 时间缩短为300ms
             setTimeout(() => {
                 pageTurner.style.display = 'none';
                 pageTurner.classList.remove('turning');
                 isAtHero = true;
                 isTransitioning = false;
-            }, 1000);
-        }, 10);
+            }, 300); // 从1000ms改为300ms
+        }, 0); // 从10ms改为0ms
     }
     
     // 监听滚动
     window.addEventListener('scroll', checkScroll);
     
-    // 导航栏点击处理
+    // 导航栏点击处理 - 加快版
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -121,17 +121,17 @@ document.addEventListener('DOMContentLoaded', function() {
             if (href === '#about' && isAtHero) {
                 e.preventDefault();
                 flipToAbout();
-                // 手动滚动到 About
+                // 手动滚动到 About - 延迟缩短为200ms
                 setTimeout(() => {
                     aboutSection.scrollIntoView({ behavior: 'smooth' });
-                }, 500);
+                }, 200); // 从500ms改为200ms
             } else if (href === '#hero' && !isAtHero) {
                 e.preventDefault();
                 flipToHero();
-                // 手动滚动到 Hero
+                // 手动滚动到 Hero - 延迟缩短为200ms
                 setTimeout(() => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
-                }, 500);
+                }, 200); // 从500ms改为200ms
             }
         });
     });
@@ -145,5 +145,5 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // 页面加载完成后初始化
-    setTimeout(init, 100);
+    setTimeout(init, 50); // 从100ms改为50ms
 });
