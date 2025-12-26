@@ -23,6 +23,9 @@ body {
     flex-direction: column;
     justify-content: center;
     padding-left: 10vw;
+   
+    opacity: 1; /* 初始时可见 */
+    transition: opacity 0.8s ease; /* 动画过渡 */
 }
 
 .hero-title {
@@ -53,6 +56,10 @@ body {
 .about {
     padding: 120px 10vw;
     background: #a855f7;
+
+    opacity: 0; /* 初始时不可见 */
+    transform: translateY(100px); /* 初始位移，确保它开始时在屏幕外 */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* 动画过渡 */
 }
 
 .about-content {
