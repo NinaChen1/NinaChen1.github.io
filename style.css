@@ -30,27 +30,6 @@ body {
     font-size: 128px;
     font-weight: 600;
     letter-spacing: -1px;
-     display: inline-flex; /* 确保标题和箭头在同一行 */
-    align-items: center;  /* 垂直居中箭头 */
-}
-.down-arrow {
-    margin-left: 20px;  /* 给箭头留点间距 */
-    font-size: 50px;    /* 调整箭头的大小 */
-    color: rgba(106,40,163,0.7);  /* 设置箭头的颜色 */
-   font-weight: 300;  /* 增加箭头的粗细，取决于字体的支持 */
-    animation: bounce 1s infinite;  /* 为箭头添加一个简单的跳动动画 */
-}
-/* 动画效果：箭头上下跳动 */
-@keyframes bounce {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(10px);
-    }
-    100% {
-        transform: translateY(0);
-    }
 }
 
 .hero-subtitle {
