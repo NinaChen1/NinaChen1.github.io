@@ -162,14 +162,14 @@ body {
 .project-summary {
   font-size: 30px;
   opacity: 0.85;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1px;
 }
 
 .project-description {
   font-size: 20px;
   line-height: 1.5;
   opacity: 0.7;
-  margin-bottom: 1rem;
+  margin-bottom: 1px;
 }
 
 /* =========================
